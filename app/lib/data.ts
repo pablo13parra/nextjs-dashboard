@@ -1,3 +1,4 @@
+import { unstable_noStore as noStore } from 'next/cache';
 import { sql } from '@vercel/postgres';
 import {
   CustomerField,
@@ -18,12 +19,16 @@ export async function fetchRevenue() {
     // Artificially delay a response for demo purposes.
     // Don't do this in production :)
 
+<<<<<<< HEAD
     // console.log('Fetching revenue data...');
+=======
+    console.log('Fetching revenue data...');
+>>>>>>> upstream/main
     await new Promise((resolve) => setTimeout(resolve, 3000));
 
     const data = await sql<Revenue>`SELECT * FROM revenue`;
 
-    // console.log('Data fetch completed after 3 seconds.');
+    console.log('Data fetch completed after 3 seconds.');
 
     return data.rows;
   } catch (error) {
@@ -166,7 +171,7 @@ export async function fetchInvoiceById(id: string) {
       // Convert amount from cents to dollars
       amount: invoice.amount / 100,
     }));
-
+    console.log(invoice);
     return invoice[0];
   } catch (error) {
     console.error('Database Error:', error);

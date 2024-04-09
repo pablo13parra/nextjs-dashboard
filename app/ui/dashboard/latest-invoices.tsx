@@ -4,8 +4,13 @@ import Image from 'next/image';
 import { lusitana } from '@/app/ui/fonts';
 import { LatestInvoice } from '@/app/lib/definitions';
 import { fetchLatestInvoices } from '@/app/lib/data';
+<<<<<<< HEAD
 export default async function LatestInvoices() {
 
+=======
+
+export default async function LatestInvoices() {
+>>>>>>> upstream/main
   const latestInvoices = await fetchLatestInvoices();
   return (
     <div className="flex w-full flex-col md:col-span-4">
